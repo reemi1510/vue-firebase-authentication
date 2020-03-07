@@ -66,7 +66,7 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password) /*authenticates the user*/
-        .then(data => {
+        .then(() => {
           this.$router.replace({ name: "Dashboard" }); /*takes user to dashboard using vue-router once they're authenticated*/
         })
         .catch(err => {
