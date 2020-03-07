@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import store from "./store";
 import router from "./routes/index";
 import * as firebase from "firebase";
 
@@ -19,7 +20,13 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+//Setting observer on auth() object which then gets currently signed-in user
+firebase.auth().onAuthStateChanged(user => {
+    store.dispatch("fetchUser", user);
+});
+
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount("#app");
