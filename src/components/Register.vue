@@ -88,7 +88,7 @@ export default {
             .updateProfile({
               displayName: this.form.name /*...associate name input with the user*/
             })
-            .then(() => {});
+           this.$router.replace({ name: "Dashboard" })
         })
         .catch(err => {
           this.error = err.message;
