@@ -9,6 +9,7 @@ npm install
 ```
 npm run serve
 ```
+Navigate to [localhost port 8080](http://localhost:8080/)
 
 ### Compiles and minifies for production
 ```
